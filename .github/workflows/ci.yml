@@ -1,0 +1,26 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Build
+        run: mkdir -p out && javac -d out src/main/java/gate/*.java src/test/java/gate/*.java
+      - name: Tests
+        run: java -cp out gate.GateTest
+      - name: Sample outputs are up to date
+        run: |
+          java -cp out gate.Main examples/sbom.json --fail-on denied > /tmp/s.txt || true
+          diff /tmp/s.txt docs/sample-output.txt
+          java -cp out gate.Main examples/sbom.json --html > /tmp/s.html
+          diff /tmp/s.html site/index.html

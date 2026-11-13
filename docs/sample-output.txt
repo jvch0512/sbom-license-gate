@@ -1,0 +1,19 @@
+16 components: 2 denied, 7 need review, the rest allowed.
+DENIED  cache-lib 3.1.0  [AGPL-3.0-only]
+        AGPL-3.0-only is on the deny list
+DENIED  mongo-embedded 1.0.2  [SSPL-1.0]
+        SSPL-1.0 is on the deny list
+REVIEW  both-needed-lib 2.0.0  [Apache-2.0 AND GPL-3.0-only]
+        GPL-3.0-only is copyleft: depends on how it is linked and distributed
+REVIEW  custom-lib 1.0.0  [Acme Internal License v2]
+        Acme Internal License v2 is not in the policy
+REVIEW  hibernate-core 6.4.4  [LGPL-2.1-only]
+        LGPL-2.1-only is copyleft: depends on how it is linked and distributed
+REVIEW  jna 5.14.0  [Apache-2.0, LGPL-2.1-or-later]
+        LGPL-2.1-or-later is copyleft: depends on how it is linked and distributed
+REVIEW  junit 5.10.2  [EPL-2.0]
+        EPL-2.0 is copyleft: depends on how it is linked and distributed
+REVIEW  mysql-connector 8.3.0  [GPL-2.0-only]
+        GPL-2.0-only is copyleft: depends on how it is linked and distributed
+REVIEW  mystery-widget 0.9.1  [(none)]
+        no licence declared: you have no right to use it until you know
